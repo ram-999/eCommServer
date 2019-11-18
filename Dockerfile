@@ -1,29 +1,19 @@
-FROM ubuntu:latest
+FROM node:10
 
-git clone https://github.com/ram-999/eCommServer
+# Create app directory
+WORKDIR /usr/src/app
 
-cd eCommServer
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
-USER eCommServer
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
 
-MKDIR eCommServer
+# Bundle app source
+COPY . .
 
-COPY /** eCommServer/
-
-CD eCommServer
-
-CMD npm start
-
-git clone https://github.com/ram-999/eCommClient
-
-cd eCommClient
-
-USER eCommClient
-
-MKDIR eCommClient
-
-COPY /** eCommClient/
-
-CD eCommClient
-
-CMD ng serve
+EXPOSE 3000
+CMD [ "npm", "start" ]
