@@ -1,4 +1,4 @@
-# Simple Application via AngularJS + Node + Express
+# eCommerce Server Application with NodeJs
 
  1. Clone this
  
@@ -135,9 +135,9 @@ curl -X POST \
   -H 'zipcode: sdsd' \
   -d '{
  "guid": "1212",
-        "first_name": "Anjj",
-        "last_name": "ssd!",
-        "email": "anji@email.com",
-        "zipcode": "12345",
-        "password": "Anji1234"
+        "first_name": "John",
+        "last_name": "Swigger!",
+        "email": "john.swi@email.com",
+        "zipcode": "443222",
+        "password": "TestP@ssw0rd"
 }'
