@@ -1,13 +1,26 @@
 # eCommerce Server Application with NodeJs
 
- 1. Clone this
- 
- 2. cd <dir>
-  
- 3. npm start
- 
- 
- # dockerisation with both client an server apps
+This app demonistates the use of node js app
+
+## Quick Links
+
+#### Pre-Requisite:
+You need to intsall docker setup on your machine to build docker images and containers
+
+#### STEPS
+```
+cd <ProjectHome>
+docker build --no-cache -t ecomm-server .
+docker stop ecomm-server-container
+docker rm ecomm-server-container
+docker run -p 4200:80 -d -it  --name ecomm-server-container ecomm-server
+
+## Optional :: With proxies
+## docker build  --build-arg http_proxy=PITC-Zscaler-Global-ZEN.proxy.corporate.ge.com:80 --build-arg https_proxy=PITC-Zscaler-Global-ZEN.proxy.corporate.ge.com:80 -t ecomm-server .
+```
+
+
+# dockerisation with both client an server apps
  
  
  Prereq:
